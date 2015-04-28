@@ -1,9 +1,14 @@
 package za.ac.cput.carRentalApp.domain;
 
+import javax.persistence.Entity;
+
 /**
  * Created by student on 2015/04/25.
  */
+@Entity
 public class Driver {
+
+
     private String name;
     private String lisenceCode;
     private int age;
@@ -19,6 +24,18 @@ public class Driver {
         this.lisenceCode = builder.lisenceCode;
         this.age = builder.age;
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLisenceCode() {
+        return lisenceCode;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public static class Builder{
@@ -43,9 +60,9 @@ public class Driver {
         }
 
         public Builder copy(Driver value){
-            this.name = value.name;
-            this.lisenceCode = value.lisenceCode;
-            this.age = value.age;
+            this.name = value.getName();
+            this.lisenceCode = value.getLisenceCode();
+            this.age = value.getAge();
             return this;
         }
 

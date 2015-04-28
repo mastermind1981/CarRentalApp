@@ -1,9 +1,14 @@
 package za.ac.cput.carRentalApp.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by student on 2015/04/25.
  */
+@Entity
 public class Services {
+    @Id
     private String serviceNumber;
     private String parts;
 

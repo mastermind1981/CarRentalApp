@@ -1,11 +1,16 @@
 package za.ac.cput.carRentalApp.domain;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Id;
+
 /**
  * Created by student on 2015/04/25.
  */
+@Embeddable
 public class Date {
     private String startdate;
     private String returndate;
+    @Id
     private String custNumber;
 
 

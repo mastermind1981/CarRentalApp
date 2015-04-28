@@ -1,11 +1,16 @@
 package za.ac.cput.carRentalApp.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by student on 2015/04/25.
  */
+@Entity
 public class Employee {
 
     private String name;
+    @Id
     private String empNumber;
 
 
@@ -21,6 +26,14 @@ public class Employee {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getEmpNumber() {
+        return empNumber;
+    }
+
     public static class Builder{
         private String name;
         private String empNumber;
@@ -30,16 +43,9 @@ public class Employee {
             this.empNumber = empNumber;
         }
 
-        public Builder lisenceCode(String lisenceCode){
-            this.name = name;
-            return this;
-        }
-
-
-
         public Builder copy(Employee value){
-            this.name = value.name;
-            this.empNumber = value.empNumber;
+            this.name = value.getName();
+            this.empNumber = value.getEmpNumber();
             return this;
         }
 

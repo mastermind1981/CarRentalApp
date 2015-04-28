@@ -1,8 +1,11 @@
 package za.ac.cput.carRentalApp.domain;
 
+import javax.persistence.Entity;
+
 /**
  * Created by student on 2015/04/25.
  */
+@Entity
 public class Company {
     private String name;
     //private String address;

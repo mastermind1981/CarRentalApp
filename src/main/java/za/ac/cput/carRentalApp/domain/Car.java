@@ -3,6 +3,7 @@ package za.ac.cput.carRentalApp.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -13,9 +14,8 @@ public class Car implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private long id;
     private String model;
-    private String colour;
     private String category;
     private int speed;
     private int numberOfPassengers;
@@ -26,18 +26,36 @@ public class Car implements Serializable {
     }
 
     public Car(Builder builder){
-        this.Id = builder.Id;
+        this.id = builder.id;
         this.category = builder.category;
-        this.colour = builder.colour;
         this.model = builder.model;
         this.KM = builder.KM;
         this.numberOfPassengers = builder.numberOfPassengers;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public int getKM() {
+        return KM;
+    }
+
+    public int getNumberOfPassengers() {
+        return numberOfPassengers;
+    }
+
     public static class Builder{
-        private long Id;
+        private long id;
         private String model;
-        private String colour;
         private String category;
         private int numberOfPassengers;
         private int KM;
@@ -45,14 +63,10 @@ public class Car implements Serializable {
         public Builder(String model){
             this.model = model;
         }
+        
 
-        public Builder colour(String colour){
-            this.colour = colour;
-            return this;
-        }
-
-        public Builder Id(long Id){
-            this.Id = Id;
+        public Builder id(long id){
+            this.id = id;
             return this;
         }
 
@@ -72,12 +86,11 @@ public class Car implements Serializable {
         }
 
         public Builder copy(Car value){
-            this.Id = value.Id;
-            this.colour = value.colour;
-            this.model = value.model;
-            this.category = value.category;
-            this.numberOfPassengers = value.numberOfPassengers;
-            this.KM = value.KM;
+            this.id = value.getId();
+            this.model = value.getModel();
+            this.category = value.getCategory();
+            this.numberOfPassengers = value.getNumberOfPassengers();
+            this.KM = value.getKM();
             return this;
 
         }

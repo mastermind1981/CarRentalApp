@@ -1,5 +1,6 @@
 package za.ac.cput.carRentalApp.domain;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 /**
@@ -9,6 +10,8 @@ import javax.persistence.Entity;
 public class Booking  {
 
    private String date;
+    @Embedded
+    private Date bDate;
 
     public Booking(){
 
@@ -18,6 +21,9 @@ public class Booking  {
 
     }
 
+    public String getDate() {
+        return date;
+    }
 
 
     public static class Builder{
@@ -28,7 +34,7 @@ public class Booking  {
         }
 
         public Builder copy(Booking value){
-            this.date = value.date;
+            this.date = value.getDate();
             return this;
         }
 
