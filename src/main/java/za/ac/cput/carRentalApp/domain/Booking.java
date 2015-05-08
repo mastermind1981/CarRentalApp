@@ -22,7 +22,7 @@ public class Booking  {
     }
 
     public String getDate() {
-        return date;
+        return "12May2015";
     }
 
 

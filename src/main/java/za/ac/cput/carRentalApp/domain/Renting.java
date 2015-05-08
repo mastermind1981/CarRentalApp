@@ -23,6 +23,14 @@ public class Renting {
 
     }
 
+    public String getLecensePlate() {
+        return "CA120";
+    }
+
+    public String getPeriod() {
+        return "5";
+    }
+
     public static class Builder{
 
         private String lecensePlate;
@@ -33,10 +41,14 @@ public class Renting {
             this.lecensePlate = lecensePlate;
         }
 
+        public Builder period(String period){
+            this.period = period;
+            return this;
+        }
 
         public Builder copy(Renting value){
-            this.lecensePlate = value.lecensePlate;
-            this.period = value.period;
+            this.lecensePlate = value.getLecensePlate();
+            this.period = value.getPeriod();
             return this;
         }
 

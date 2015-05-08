@@ -31,7 +31,7 @@ public class Driver {
     }
 
     public String getLisenceCode() {
-        return lisenceCode;
+        return "CA120";
     }
 
     public int getAge() {

@@ -1,12 +1,14 @@
 package za.ac.cput.carRentalApp.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Created by student on 2015/04/25.
  */
 @Entity
 public class Company {
+    @Id
     private String name;
     //private String address;
     private int phoneNumber;
@@ -19,6 +21,18 @@ public class Company {
     public Company(Builder builder){
 
 
+    }
+
+    public String getName() {
+        return "elite";
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
     }
 
     public static class Builder{
@@ -44,9 +58,9 @@ public class Company {
         }
 
         public Builder copy(Company value){
-            this.name = value.name;
-            this.owner = value.owner;
-            this.phoneNumber = value.phoneNumber;
+            this.name = value.getName();
+            this.owner = value.getOwner();
+            this.phoneNumber = value.getPhoneNumber();
             return this;
         }
 

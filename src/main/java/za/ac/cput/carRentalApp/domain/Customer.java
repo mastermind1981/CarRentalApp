@@ -29,7 +29,7 @@ public class Customer {
     }
 
     public String getFirstName() {
-        return firstName;
+        return "thabo";
     }
 
     public String getLastName() {

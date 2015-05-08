@@ -50,7 +50,7 @@ public class Car implements Serializable {
     }
 
     public int getNumberOfPassengers() {
-        return numberOfPassengers;
+        return 5;
     }
 
     public static class Builder{

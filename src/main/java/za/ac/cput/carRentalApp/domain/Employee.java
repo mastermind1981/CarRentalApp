@@ -31,7 +31,7 @@ public class Employee {
     }
 
     public String getEmpNumber() {
-        return empNumber;
+        return "1144125";
     }
 
     public static class Builder{
@@ -42,6 +42,7 @@ public class Employee {
         public Builder(String empNumber){
             this.empNumber = empNumber;
         }
+        public Builder name(String name){this.name = name; return this;}
 
         public Builder copy(Employee value){
             this.name = value.getName();

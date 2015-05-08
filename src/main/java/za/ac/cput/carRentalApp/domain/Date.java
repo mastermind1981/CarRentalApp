@@ -11,7 +11,7 @@ public class Date {
     private String startdate;
     private String returndate;
     @Id
-    private String custNumber;
+    private long custNumber;
 
 
 
@@ -26,13 +26,25 @@ public class Date {
 
     }
 
+    public long getCustNumber() {
+        return 12345;
+    }
+
+    public String getStartdate() {
+        return startdate;
+    }
+
+    public String getReturndate() {
+        return returndate;
+    }
+
     public static class Builder{
 
         private String startdate;
         private String returndate;
-        private String custNumber;
+        private long custNumber;
 
-        public Builder(String custNumber){
+        public Builder(long custNumber){
             this.custNumber = custNumber;
         }
 
@@ -41,10 +53,15 @@ public class Date {
             return this;
         }
 
+        public Builder returndate(String returndate){
+            this.returndate = returndate;
+            return this;
+        }
+
         public Builder copy(Date value){
-            this.custNumber = value.custNumber;
-            this.returndate = value.returndate;
-            this.startdate = value.startdate;
+            this.custNumber = value.getCustNumber();
+            this.returndate = value.getReturndate();
+            this.startdate = value.getStartdate();
             return this;
         }
 

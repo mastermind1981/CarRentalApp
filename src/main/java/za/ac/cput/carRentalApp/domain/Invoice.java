@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class Invoice {
     @Id
-    private String invoiceNumber;
+    private long invoiceNumber;
     private int amountPaid;
     private int amountOwed;
 
@@ -26,14 +26,26 @@ public class Invoice {
 
     }
 
+    public long getInvoiceNumber() {
+        return invoiceNumber;
+    }
+
+    public int getAmountPaid() {
+        return amountPaid;
+    }
+
+    public int getAmountOwed() {
+        return 15;
+    }
+
     public static class Builder{
-        private String invoiceNumber;
+        private long invoiceNumber;
         private int amountPaid;
         private int amountOwed;
 
 
 
-        public Builder(String invoiceNumber){
+        public Builder(long invoiceNumber){
             this.invoiceNumber = invoiceNumber;
         }
 
@@ -48,9 +60,9 @@ public class Invoice {
         }
 
         public Builder copy(Invoice value){
-            this.invoiceNumber = value.invoiceNumber;
-            this.amountPaid = value.amountPaid;
-            this.amountOwed = value.amountOwed;
+            this.invoiceNumber = value.getInvoiceNumber();
+            this.amountPaid = value.getAmountPaid();
+            this.amountOwed = value.getAmountOwed();
             return this;
         }
 

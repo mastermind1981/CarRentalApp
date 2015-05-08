@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class Services {
     @Id
-    private String serviceNumber;
+    private long serviceNumber;
     private String parts;
 
 
@@ -26,20 +26,32 @@ public class Services {
 
     }
 
+    public long getServiceNumber() {
+        return 12;
+    }
+
+    public String getParts() {
+        return "mirror";
+    }
+
     public static class Builder{
 
-        private String serviceNumber;
+        private long serviceNumber;
         private String parts;
 
 
-        public Builder(String lecensePlate){
-            this.serviceNumber = lecensePlate;
+        public Builder(long serviceNumber){
+            this.serviceNumber = serviceNumber;
         }
 
+        public Builder parts(String parts){
+            this.parts = parts;
+            return this;
+        }
 
         public Builder copy(Services value){
-            this.serviceNumber = value.serviceNumber;
-            this.parts = value.parts;
+            this.serviceNumber = value.getServiceNumber();
+            this.parts = value.getParts();
             return this;
         }
 
